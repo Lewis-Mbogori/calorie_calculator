@@ -15,6 +15,7 @@ class _InputState extends State<Input> {
   final _height = TextEditingController();
   final _activity = TextEditingController();
   var initial = 0.0;
+  String? selectedgender;
   
   String determiner (initial){
      if (initial == 0){
@@ -71,6 +72,28 @@ class _InputState extends State<Input> {
               }
             },
             ),
+
+            RadioListTile(
+            title: const Text('Male'), 
+            value: 'Male',
+            groupValue: selectedgender, 
+            onChanged: (value){
+              setState(() {
+                selectedgender = (value!).toString()
+                ;
+              });
+            }),
+
+            RadioListTile(
+            title: const Text('female'), 
+            value: 'female',
+            groupValue: selectedgender, 
+            onChanged: (value){
+              setState(() {
+                selectedgender = (value!).toString()
+                ;
+              });
+            }),
 
             
 
